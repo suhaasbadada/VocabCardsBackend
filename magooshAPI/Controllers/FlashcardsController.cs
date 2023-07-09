@@ -60,6 +60,16 @@ namespace magooshAPI.Controllers
             return flashcards;
         }
 
+        [HttpGet("random")]
+        public async Task<Flashcard> Get()
+        {
+            Random random = new Random();
+            int id = random.Next(1,1068);
+            var flashcard = await _context.Flashcards.FirstOrDefaultAsync(x => x.Id == id);
+            return flashcard;
+        }
+
+
     }
 }
     
