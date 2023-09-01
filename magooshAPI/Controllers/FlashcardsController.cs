@@ -69,6 +69,13 @@ namespace magooshAPI.Controllers
             return flashcard;
         }
 
+        [HttpGet("browse")]
+        public ActionResult<IEnumerable<Flashcard>> GetAll()
+        {
+            var flashcard = _context.Flashcards.ToList();
+            return flashcard;
+        }
+
 
     }
 }
